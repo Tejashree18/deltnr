@@ -1,0 +1,77 @@
+Create a table called Employee with the following Columns  and perform the following operations:-
+------------------------------------------------------------------------------------------------------------
+
+EmployeeID
+EmployeeName
+EmployeeAddress
+DOB
+DOJ
+Salary
+
+create table Employee
+(
+employeeId number Primary Key,
+employeeName varchar(20),
+employeeAddress varchar(20),
+dob date,
+doj date,
+salary number
+);
+
+a.) Insert five records
+
+insert into Employee values(101,'Ram','Mumbai','25-DEC-1997','25-JUL-2018',20000);
+insert into Employee values(102,'Shyam','Bamgalore','17-DEC-1996','20-JUL-2018',22000);
+insert into Employee values(103,'Sita','Mumbai','20-MAY-1997','25-APR-2017',24000);
+insert into Employee values(104,'Gita','Chennai','24-MAR-1996','01-DEC-2018',18000);
+insert into Employee values(105,'Ramesh','Hyderabad','12-SEP-1997','25-JUN-2017',24000);
+
+b) Retrieve all the records
+
+select * from Employee;
+
+c) Retrieve the Employee name whose salary is greater than 20000
+
+select * from Employee 
+where salary>20000;
+
+d) Retrieve the Employee name whose address contains 'a' or 'p' or 'r'  as the last character
+
+select * from EMPLOYEE where EMPLOYEEADDRESS  like ('%a') or EMPLOYEEADDRESS like ('%P') or EMPLOYEEADDRESS like('%i');
+
+
+ 
+e) Increase the Salary of all the Employee by 20%
+
+update employee
+set salary=salary+(salary*0.2);
+
+f) Delete all the employee records whose salary is less than 5000
+
+delete from employee
+where salary<5000;
+
+g) Add another column Email and update the contents.
+
+alter table Employee
+add email varchar2(50);
+
+update employee
+set email='ram@mail.com'
+where employeeid=101;
+
+update employee
+set email='shyam@mail.com'
+where employeeid=102;
+
+update employee
+set email='sita@mail.com'
+where employeeid=103;
+
+update employee
+set email='gita@mail.com'
+where employeeid=104;
+
+update employee
+set email='ramesh@mail.com'
+where employeeid=105;
